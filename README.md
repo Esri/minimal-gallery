@@ -1,0 +1,2 @@
+# MinimalGallery
+The Minimal Gallery is a simple way to display maps and apps in a gallery. It is a configurable group application designed to be embedded in a web page or used as a standalone gallery. The Group Gallery presents a collection maps and apps as cards in a clean and simple design. Maps and apps can be previewed directly in the gallery or opened for full screen viewing and capabilities.
