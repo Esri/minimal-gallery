@@ -1,0 +1,45 @@
+{
+  "name": "arcgis-boilerplate-ts",
+  "version": "0.0.1",
+  "description": "TypeScript boilerplate for building ArcGIS JS API 4.x Applications",
+  "main": "entrypoint.js",
+  "scripts": {
+    "start": "npm run serve | npm run watch",
+    "serve": "node server.js",
+    "watch": "tsc --project ./src/tsconfig.json --watch",
+    "test": "nyc mocha"
+  },
+  "nyc": {
+    "extension": [
+      ".tsx",
+      ".ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esri/application-boilerplate-js.git"
+  },
+  "keywords": [
+    "Esri",
+    "ArcGIS",
+    "TypeScript"
+  ],
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.3.0",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.13",
+    "chai": "^3.5.0",
+    "dojo-typings": "^1.11.6",
+    "maquette": "^2.4.5",
+    "maquette-query": "^0.11.2",
+    "mocha": "^3.2.0",
+    "mock-require": "^2.0.2",
+    "nyc": "^10.2.0",
+    "sinon": "^2.1.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

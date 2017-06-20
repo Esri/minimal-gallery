@@ -1,0 +1,56 @@
+{
+  "bgColor": "#ffffff",
+  "cardColor": "#ffffff",
+  "appCaptionColor": "#292b2c",
+  "mapCaptionColor": "#0275d8",
+  "sceneCaptionColor": "#5cb85c",
+  "captionTextColor": "#ffffff",
+  "fontColor": "#000000",
+  "headColor": "#ffffff",
+  "linkColor": "#0079c1",
+  "buttonBgColor": "#0079c1",
+  "buttonTextColor": "#ffffff",
+  "showAuthor": true,
+  "sortOrder": "asc",
+  "sortField": "title",
+  "showHeader": true,
+  "showItemType": true,
+  "headerText": "Group Gallery",
+  "headerTextURL": "http://www.esri.com/",
+  "headerImage": true,
+  "headerImageLocation": "http://jsapi.maps.arcgis.com/sharing/rest/community/groups/db0e225e408c4ecea055088cd4d09b84/info/Screenshot_2015-10-28_09.36.16.png",
+  "headerSearch": true,
+  "searchPlaceholder": "Search",
+  "showAgolLink": true,
+  "agolLinkText": "View on ArcGIS Online",
+  "agolLinkLocation": "http://jsapi.maps.arcgis.com/home/group.html?id=${GROUP_ID}",
+  "itemsPerPage": 20,
+  "compassWidget": "",
+  "homeWidget": "top-left",
+  "legendWidget": "bottom-right",
+  "locateWidget": "top-left",
+  "searchWidget": "bottom-left",
+  "appid": "",
+  "group": "a09a1595fd944f17a47a244e67d804f9",
+  "title": "",
+  "portalUrl": "https://www.arcgis.com",
+  "oauthappid": "",
+  "proxyUrl": "",
+  "units": "",
+  "helperServices": {
+    "geometry": {
+      "url": null
+    },
+    "printTask": {
+      "url": null
+    },
+    "elevationSync": {
+      "url": null
+    },
+    "geocode": [
+      {
+        "url": null
+      }
+    ]
+  }
+}
