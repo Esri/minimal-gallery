@@ -33,19 +33,19 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                         "btn-transparent": !isActive
                     };
                     return {
-                        render: function () { return (widget_1.jsxFactory("a", { id: "page-" + (i + 1), title: "page-" + (i + 1), classes: buttonClasses, onclick: handlePage, role: "link", tabindex: "0", style: "\n                                color: " + (isActive ? props.config.buttonTextColor : props.config.buttonBgColor) + ";\n                                background-color: " + (isActive ? props.config.buttonBgColor : null) + ";\n                                border: " + (isActive ? "1px solid " + props.config.buttonBgColor : "none") + ";\n                            ", key: "page-button-" + (i + 1) + "-" + props.keyCode }, i + 1)); }
+                        render: function () { return (widget_1.tsx("a", { id: "page-" + (i + 1), title: "page-" + (i + 1), classes: buttonClasses, onclick: handlePage, role: "link", tabindex: "0", style: "\n                                color: " + (isActive ? props.config.buttonTextColor : props.config.buttonBgColor) + ";\n                                background-color: " + (isActive ? props.config.buttonBgColor : null) + ";\n                                border: " + (isActive ? "1px solid " + props.config.buttonBgColor : "none") + ";\n                            ", key: "page-button-" + (i + 1) + "-" + props.keyCode }, i + 1)); }
                     };
                 });
                 if (pageButtons.length === 0) {
-                    return (widget_1.jsxFactory("h3", { class: "center-style" }, props.i18n.pager.noResults));
+                    return (widget_1.tsx("h3", { class: "center-style" }, props.i18n.pager.noResults));
                 }
                 else if (pageButtons.length === 1) {
                     return null;
                 }
-                return (widget_1.jsxFactory("div", { class: "text-center trailer-1 leader-1", key: "pager-" + props.total },
-                    widget_1.jsxFactory("a", { id: "previous", title: "previous", classes: prevButtonClasses, onclick: handlePrevious, role: "link", tabindex: "0", style: "color:" + props.config.buttonBgColor + ";", key: "previous-button-" + props.keyCode }, "Previous"),
+                return (widget_1.tsx("div", { class: "text-center trailer-1 leader-1", key: "pager-" + props.total },
+                    widget_1.tsx("a", { id: "previous", title: "previous", classes: prevButtonClasses, onclick: handlePrevious, role: "link", tabindex: "0", style: "color:" + props.config.buttonBgColor + ";", key: "previous-button-" + props.keyCode }, "Previous"),
                     pageButtons.map(function (button) { return button.render(); }),
-                    widget_1.jsxFactory("a", { id: "next", title: "next", classes: nextButtonClasses, onclick: handleNext, role: "link", tabindex: "0", style: "color:" + props.config.buttonBgColor + ";", key: "next-button-" + props.keyCode }, "Next")));
+                    widget_1.tsx("a", { id: "next", title: "next", classes: nextButtonClasses, onclick: handleNext, role: "link", tabindex: "0", style: "color:" + props.config.buttonBgColor + ";", key: "next-button-" + props.keyCode }, "Next")));
             }
         };
         function handlePrevious() {

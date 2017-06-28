@@ -1,4 +1,4 @@
-import { jsxFactory } from "esri/widgets/support/widget";
+import { tsx } from "esri/widgets/support/widget";
 
 import AppView from "../../application/widgets/views/AppView";
 import { WebMap, WebScene } from "../../application/widgets/views/ViewComposites";

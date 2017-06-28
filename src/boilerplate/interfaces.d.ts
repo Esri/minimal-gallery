@@ -118,4 +118,3 @@ export interface CreateMapFromItemOptions {
   item: PortalItem;
   appProxies?: ApplicationProxy[];
 }
-

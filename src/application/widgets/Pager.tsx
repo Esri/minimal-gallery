@@ -1,4 +1,4 @@
-import { jsxFactory } from "esri/widgets/support/widget";
+import { tsx } from "esri/widgets/support/widget";
 
 interface IPagerProps {
     config: {

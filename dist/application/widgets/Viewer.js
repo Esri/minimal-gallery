@@ -25,16 +25,16 @@ define(["require", "exports", "esri/widgets/support/widget", "./views/AppView", 
         }
         else {
             view = {
-                render: function () { return (widget_1.jsxFactory("h3", { class: "center-style" }, props.i18n.viewLoading.sorry)); }
+                render: function () { return (widget_1.tsx("h3", { class: "center-style" }, props.i18n.viewLoading.sorry)); }
             };
         }
         return {
             render: function () {
-                return (widget_1.jsxFactory("div", { id: "view-container", key: "view-container", classes: containerClasses, style: "background-color: " + convertHex(props.config.bgColor, 85) },
-                    widget_1.jsxFactory("div", { id: "map-container" },
+                return (widget_1.tsx("div", { id: "view-container", key: "view-container", classes: containerClasses, style: "background-color: " + convertHex(props.config.bgColor, 85) },
+                    widget_1.tsx("div", { id: "map-container" },
                         view.render(),
-                        widget_1.jsxFactory("button", { class: "btn btn-clear view-exit-button clickable", onclick: handleExitClick, title: props.i18n.ui.close },
-                            widget_1.jsxFactory("span", { class: "icon-ui-close view-exit-icon" })))));
+                        widget_1.tsx("button", { class: "btn btn-clear view-exit-button clickable", onclick: handleExitClick, title: props.i18n.ui.close },
+                            widget_1.tsx("span", { class: "icon-ui-close view-exit-icon" })))));
             }
         };
         function handleExitClick() {

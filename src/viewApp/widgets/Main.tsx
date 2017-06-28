@@ -2,7 +2,7 @@
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
 import {declared, property, subclass} from "esri/core/accessorSupport/decorators";
-import { jsxFactory, renderable } from "esri/widgets/support/widget";
+import { tsx, renderable } from "esri/widgets/support/widget";
 import * as Widget from "esri/widgets/Widget";
 import ApplicationBase from "../../boilerplate/ApplicationBase";
 import { ApplicationConfig } from "../../boilerplate/interfaces";

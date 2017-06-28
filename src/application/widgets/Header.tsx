@@ -1,4 +1,4 @@
-import { jsxFactory } from "esri/widgets/support/widget";
+import { tsx } from "esri/widgets/support/widget";
 
 interface IHeaderProps {
     config: {
@@ -35,7 +35,7 @@ export default (props: IHeaderProps) => {
                             <div class="tablet-hide">
                                 <a href={props.config.headerTextURL}>
                                     {headImage}
-                                    <a class="top-nav-title" style={`color: ${props.config.fontColor}`}>
+                                    <a class="top-nav-title" style={`color: ${props.config.headerTextColor}`}>
                                         {props.config.headerText}
                                     </a>
                                 </a>
@@ -43,7 +43,7 @@ export default (props: IHeaderProps) => {
                                     <a
                                         class="top-nav-link"
                                         href={props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group)}
-                                        style={`color: ${props.config.fontColor}`}
+                                        style={`color: ${props.config.headerTextColor}`}
                                     >
                                         {props.config.agolLinkText}
                                     </a>
@@ -54,7 +54,7 @@ export default (props: IHeaderProps) => {
                             <div class="tablet-show top-nav-flex">
                                 <header class="top-nav-flex-title">
                                     <a href={props.config.headerTextURL}>
-                                        <a class="top-nav-title" style={`color: ${props.config.fontColor}`}>
+                                        <a class="top-nav-title" style={`color: ${props.config.headerTextColor}`}>
                                             {props.config.headerText}
                                         </a>
                                     </a>

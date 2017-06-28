@@ -4,8 +4,7 @@
   "description": "TypeScript boilerplate for building ArcGIS JS API 4.x Applications",
   "main": "entrypoint.js",
   "scripts": {
-    "start": "npm run serve | npm run watch",
-    "serve": "node server.js",
+    "start": "npm run watch",
     "watch": "tsc --project ./src/tsconfig.json --watch",
     "test": "nyc mocha"
   },
@@ -22,10 +21,11 @@
   "keywords": [
     "Esri",
     "ArcGIS",
-    "TypeScript"
+    "TypeScript",
+    "Gallery"
   ],
   "devDependencies": {
-    "@types/arcgis-js-api": "^4.3.0",
+    "@types/arcgis-js-api": "^4.3.1",
     "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.13",
     "chai": "^3.5.0",
@@ -39,7 +39,5 @@
     "ts-node": "^3.0.2",
     "typescript": "^2.2.1"
   },
-  "dependencies": {
-    "express": "^4.15.2"
-  }
+  "dependencies": {}
 }

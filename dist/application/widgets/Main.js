@@ -66,26 +66,26 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
         }
         Main.prototype.render = function () {
             if (this.state.loadStatus === "loaded") {
-                return (widget_1.jsxFactory("div", null,
+                return (widget_1.tsx("div", null,
                     this.state.headComponent.render(),
                     this.state.galleryComponent.render(),
                     this.state.viewComponent.render(),
                     this.state.pagerComponent.render()));
             }
             else if (this.state.loadStatus === "failed") {
-                return (widget_1.jsxFactory("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
+                return (widget_1.tsx("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
             }
             else if (this.state.loadStatus === "searching") {
-                return (widget_1.jsxFactory("div", null,
+                return (widget_1.tsx("div", null,
                     this.state.headComponent.render(),
-                    widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
-                        widget_1.jsxFactory("div", { class: "loader-bars" }),
-                        widget_1.jsxFactory("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
+                    widget_1.tsx("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
+                        widget_1.tsx("div", { class: "loader-bars" }),
+                        widget_1.tsx("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
             }
-            return (widget_1.jsxFactory("div", null,
-                widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
-                    widget_1.jsxFactory("div", { class: "loader-bars" }),
-                    widget_1.jsxFactory("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
+            return (widget_1.tsx("div", null,
+                widget_1.tsx("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
+                    widget_1.tsx("div", { class: "loader-bars" }),
+                    widget_1.tsx("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
         };
         Main.prototype.handleBoilerplateLoad = function (boilerplateResult) {
             var _this = this;
@@ -150,7 +150,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                         config: _this.state.boilerplateResult.config,
                         i18n: _this.state.i18n,
                         itemClickHandler: _this.itemClickHandler,
-                        items: filteredResults.slice(0, _this.state.itemsPerPage)
+                        items: filteredResults.slice(0, _this.state.itemsPerPage),
+                        portalUrl: _this.state.boilerplateResult.portal.url
                     }), headComponent: headComponent, items: filteredResults, searchResults: filteredResults, loadStatus: "loaded", pagerComponent: pagerComponent });
             }, function (err) {
                 console.error(err);
@@ -196,7 +197,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
                     itemClickHandler: this.itemClickHandler,
-                    items: searchResults.slice(0, this.state.itemsPerPage)
+                    items: searchResults.slice(0, this.state.itemsPerPage),
+                    portalUrl: this.state.boilerplateResult.portal.url
                 }), loadStatus: "loaded", pagerComponent: Pager_1.default({
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
@@ -212,7 +214,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
                     itemClickHandler: this.itemClickHandler,
-                    items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage)
+                    items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage),
+                    portalUrl: this.state.boilerplateResult.portal.url
                 }), loadStatus: "loaded" });
         };
         return Main;

@@ -7,6 +7,7 @@ interface IPanelCompositeProps {
     i18n: any;
     item: any;
     itemClickHandler: any;
+    portalUrl: string;
 }
 
 export const MapPanel = (props: IPanelCompositeProps) => (
@@ -14,7 +15,7 @@ export const MapPanel = (props: IPanelCompositeProps) => (
             ...props,
             captionColor: props.config.mapCaptionColor,
             extItem: props.i18n.ui.itemExtTip,
-            extLink: `http://jsapi.maps.arcgis.com/home/item.html?id=${props.item.id}`,
+            extLink: `${props.portalUrl}/home/item.html?id=${props.item.id}`,
             extTitle: props.i18n.ui.mapExtTip,
             itemClickHandler: () => {
                 props.itemClickHandler(props.item.id, "webmap");
@@ -28,7 +29,7 @@ export const ScenePanel = (props: IPanelCompositeProps) => (
         ...props,
         captionColor: props.config.sceneCaptionColor,
         extItem: props.i18n.ui.itemExtTip,
-        extLink: `http://jsapi.maps.arcgis.com/home/item.html?id=${props.item.id}`,
+        extLink: `${props.portalUrl}/home/item.html?id=${props.item.id}`,
         extTitle: props.i18n.ui.sceneExtTip,
         itemClickHandler: () => {
             props.itemClickHandler(props.item.id, "webscene");
@@ -42,7 +43,7 @@ export const AppPanel = (props: IPanelCompositeProps) => (
         ...props,
         captionColor: props.config.appCaptionColor,
         extItem: props.i18n.ui.itemExtTip,
-        extLink: `http://jsapi.maps.arcgis.com/home/item.html?id=${props.item.id}`,
+        extLink: `${props.portalUrl}/home/item.html?id=${props.item.id}`,
         extTitle: props.i18n.ui.appExtTip,
         itemClickHandler: () => {
             props.itemClickHandler(props.item.url, "webapp");
@@ -50,4 +51,3 @@ export const AppPanel = (props: IPanelCompositeProps) => (
         maxLink: props.item.url
     })
 );
-
