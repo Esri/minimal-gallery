@@ -1,4 +1,4 @@
-import { jsxFactory } from "esri/widgets/support/widget";
+import { tsx } from "esri/widgets/support/widget";
 
 export const MapPanel = (props) => ({
     render: () => <div id="map-panel" />

@@ -3,7 +3,7 @@
 
 import * as all from "dojo/promise/all";
 import { declared, property, subclass } from "esri/core/accessorSupport/decorators";
-import { jsxFactory, renderable } from "esri/widgets/support/widget";
+import { tsx, renderable } from "esri/widgets/support/widget";
 import * as Widget from "esri/widgets/Widget";
 import ApplicationBase from "../../boilerplate/ApplicationBase";
 import { ApplicationConfig } from "../../boilerplate/interfaces";
@@ -200,7 +200,8 @@ export default class Main extends declared(Widget) {
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
                     itemClickHandler: this.itemClickHandler,
-                    items: filteredResults.slice(0, this.state.itemsPerPage)
+                    items: filteredResults.slice(0, this.state.itemsPerPage),
+                    portalUrl: this.state.boilerplateResult.portal.url
                 }),
                 headComponent,
                 items: filteredResults,
@@ -274,7 +275,8 @@ export default class Main extends declared(Widget) {
                 config: this.state.boilerplateResult.config,
                 i18n: this.state.i18n,
                 itemClickHandler: this.itemClickHandler,
-                items: searchResults.slice(0, this.state.itemsPerPage)
+                items: searchResults.slice(0, this.state.itemsPerPage),
+                portalUrl: this.state.boilerplateResult.portal.url
             }),
             loadStatus: "loaded",
             pagerComponent: Pager({
@@ -297,7 +299,8 @@ export default class Main extends declared(Widget) {
                 config: this.state.boilerplateResult.config,
                 i18n: this.state.i18n,
                 itemClickHandler: this.itemClickHandler,
-                items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage)
+                items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage),
+                portalUrl: this.state.boilerplateResult.portal.url
             }),
             loadStatus: "loaded"
         };

@@ -23,7 +23,8 @@ export default () => (
                 },
                 i18n: {},
                 itemClickHandler,
-                items: []
+                items: [],
+                portalUrl: "foobar"
             });
             projector.initialize(galleryComponent.render);
         });
@@ -52,7 +53,8 @@ export default () => (
                 },
                 i18n: {},
                 itemClickHandler,
-                items: [{ type: "Web Map", title: "foo" }, { type: "Web Scene", title: "bar" }, { type: "Web Mapping Application", title: "foobar" }]
+                items: [{ type: "Web Map", title: "foo" }, { type: "Web Scene", title: "bar" }, { type: "Web Mapping Application", title: "foobar" }],
+                portalUrl: "foobar"
             });
             projector.initialize(galleryComponent.render);
             const divs = projector.queryAll("div").execute();

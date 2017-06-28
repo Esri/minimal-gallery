@@ -1,6 +1,5 @@
-# MinimalGallery
-The Minimal Gallery is a simple way to display maps and apps in a gallery. It is a configurable group application designed to be embedded in a web page or used as a standalone gallery. The Group Gallery presents a collection maps and apps as cards in a clean and simple design. Maps and apps can be previewed directly in the gallery or opened for full screen viewing and capabilities.
-  
+# Embedded Group Gallery Application
+
 This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](https://developers.arcgis.com/javascript/) and the Esri [Application-Base](https://github.com/Esri/application-base-js)
 
 ## Configuration
@@ -24,6 +23,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"showHeader"`: A boolean (true/false) value controlling whether or not the header will be displayed
 - `"showItemType"`: A boolean (true/false) value controlling whether or not item types will be displayed for each gallery item
 - `"headerText"`: The gallery title shown in the header
+- `"headerTextColor"`: The color of the header text
 - `"headerTextURL"`: A location for the gallery title to link to
 - `"headerImage"`: Boolean value controlling whether or not an image will be displayed next to the gallery title
 - `"headerImageLocation"`: The URL for the image to be displayed next to the gallery title
@@ -44,11 +44,11 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 
 ## Development
 
-If you wish to build additional functionality into the application, a test server, development dependencies, unit tests, and convenient npm scripts are available in this repository. First, clone the repository and install the dependencies using `npm install` or `npm i`.
+If you wish to build additional functionality into the application, development dependencies, unit tests, and convenient npm scripts are available in this repository. First, clone the repository and install the dependencies using `npm i`.
 
-Once the operation is complete, `npm start` will start a test server on `localhost:5555` serving the `/dist/` directory. It will also watch the `/src/` directory for changes to the source typescript files, and transpile them to javascript in the `/dist/` directory on the fly.
+Once the operation is complete, `npm start` will compile the TypeScript to JavaScript in the `/dist/` directory. It will also watch the `/src/` directory for changes to the source TypeScript files, and transpile them to JavaScript in the `/dist/` directory as you edit.
 
-You can also run the test suite with `npm test`.
+You can run the test suite with `npm test` to help determine if the basic functionality of the application is intact.
 
 ## Deployment
 
@@ -64,12 +64,22 @@ Anyone and everyone is welcome to contribute.
 
 ## Licensing
 
-Copyright 2012 Esri
+Copyright 2017 Esri
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
 
-http://www.apache.org/licenses/LICENSE-2.0
+you may not use this file except in compliance with the License.
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+You may obtain a copy of the License at
 
-A copy of the license is available in the repository's license.txt file.
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+
+distributed under the License is distributed on an "AS IS" BASIS,
+
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+See the License for the specific language governing permissions and
+
+limitations under the License.​

@@ -55,15 +55,15 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
         }
         Main.prototype.render = function () {
             if (this.state.loadStatus === "loaded") {
-                return (widget_1.jsxFactory("div", null, this.state.viewComponent.render()));
+                return (widget_1.tsx("div", null, this.state.viewComponent.render()));
             }
             else if (this.state.loadStatus === "failed") {
-                return (widget_1.jsxFactory("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
+                return (widget_1.tsx("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
             }
-            return (widget_1.jsxFactory("div", null,
-                widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
-                    widget_1.jsxFactory("div", { class: "loader-bars" }),
-                    widget_1.jsxFactory("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
+            return (widget_1.tsx("div", null,
+                widget_1.tsx("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
+                    widget_1.tsx("div", { class: "loader-bars" }),
+                    widget_1.tsx("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
         };
         Main.prototype.handleBoilerplateLoad = function (boilerplateResult) {
             var widgets = Object.keys(boilerplateResult.config)

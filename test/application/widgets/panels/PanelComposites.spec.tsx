@@ -29,7 +29,8 @@ export default () => (
                         }
                     },
                     item: {},
-                    itemClickHandler
+                    itemClickHandler,
+                    portalUrl: "foobar"
                 });
                 projector.initialize(panelComponent.render);
             });
@@ -74,7 +75,8 @@ export default () => (
                         }
                     },
                     item: {},
-                    itemClickHandler
+                    itemClickHandler,
+                    portalUrl: "foobar"
                 });
                 projector.initialize(panelComponent.render);
             });
@@ -120,6 +122,7 @@ export default () => (
                     },
                     item: {},
                     itemClickHandler,
+                    portalUrl: "foobar"
                 });
                 projector.initialize(panelComponent.render);
             });

@@ -15,16 +15,16 @@ define(["require", "exports", "esri/widgets/support/widget", "dojo/promise/all",
             status: "loading",
             render: function () {
                 if (ViewPublic.status === "loaded") {
-                    return (widget_1.jsxFactory("div", null));
+                    return (widget_1.tsx("div", null));
                 }
                 else if (ViewPublic.status === "loading") {
-                    return (widget_1.jsxFactory("div", null,
-                        widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style" },
-                            widget_1.jsxFactory("div", { class: "loader-bars" }),
-                            widget_1.jsxFactory("div", { class: "loader-text" }, ViewPublic.i18n.viewLoading[ViewPublic.loadText]))));
+                    return (widget_1.tsx("div", null,
+                        widget_1.tsx("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style" },
+                            widget_1.tsx("div", { class: "loader-bars" }),
+                            widget_1.tsx("div", { class: "loader-text" }, ViewPublic.i18n.viewLoading[ViewPublic.loadText]))));
                 }
-                return (widget_1.jsxFactory("div", null,
-                    widget_1.jsxFactory("h3", { class: "center-style" }, ViewPublic.i18n.viewLoading.failed)));
+                return (widget_1.tsx("div", null,
+                    widget_1.tsx("h3", { class: "center-style" }, ViewPublic.i18n.viewLoading.failed)));
             }
         };
         loadScripts();
