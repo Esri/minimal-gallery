@@ -155,7 +155,7 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     }), headComponent: headComponent, items: filteredResults, searchResults: filteredResults, loadStatus: "loaded", pagerComponent: pagerComponent });
             }, function (err) {
                 console.error(err);
-                _this.state = __assign({}, _this.state, { status: "failed" });
+                _this.state = __assign({}, _this.state, { loadStatus: "failed" });
             });
         };
         Main.prototype.handleBoilerplateError = function (err) {
@@ -188,11 +188,12 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
         ;
         Main.prototype.handleSearch = function (e) {
             e.preventDefault();
-            var searchResults = this.state.items.filter(function (item) {
-                return item.title.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1 ||
-                    item.type.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1 ||
-                    item.owner.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1;
-            });
+            var searchQuery = e.target.childNodes[0].value.toLowerCase();
+            var searchResults = this.state.items.filter(function (item) { return (item.title.toLowerCase().indexOf(searchQuery) !== -1 ||
+                item.type.toLowerCase().indexOf(searchQuery) !== -1 ||
+                item.owner.toLowerCase().indexOf(searchQuery) !== -1 ||
+                (item.tags && item.tags.map(function (tag) { return tag.toLowerCase(); }).indexOf(searchQuery) !== -1) ||
+                (item.description && item.description.indexOf(searchQuery) !== -1)); });
             this.state = __assign({}, this.state, { galleryComponent: Gallery_1.default({
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
@@ -218,15 +219,15 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     portalUrl: this.state.boilerplateResult.portal.url
                 }), loadStatus: "loaded" });
         };
+        __decorate([
+            decorators_1.property(),
+            widget_1.renderable()
+        ], Main.prototype, "state", void 0);
+        Main = __decorate([
+            decorators_1.subclass("esri.widgets.Main")
+        ], Main);
         return Main;
     }(decorators_1.declared(Widget)));
-    __decorate([
-        decorators_1.property(),
-        widget_1.renderable()
-    ], Main.prototype, "state", void 0);
-    Main = __decorate([
-        decorators_1.subclass("esri.widgets.Main")
-    ], Main);
     exports.default = Main;
 });
 //# sourceMappingURL=Main.js.map

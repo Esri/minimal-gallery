@@ -213,7 +213,7 @@ export default class Main extends declared(Widget) {
             console.error(err);
             this.state = {
                 ...this.state,
-                status: "failed"
+                loadStatus: "failed"
             };
         })
     }
@@ -262,12 +262,14 @@ export default class Main extends declared(Widget) {
 
     private handleSearch(e) {
         e.preventDefault();
-
-        const searchResults = this.state.items.filter((item) => {
-            return item.title.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1 ||
-                item.type.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1 ||
-                item.owner.toLowerCase().indexOf(e.target.childNodes[0].value.toLowerCase()) !== -1;
-        });
+        const searchQuery = e.target.childNodes[0].value.toLowerCase();
+        const searchResults = this.state.items.filter((item) => (
+            item.title.toLowerCase().indexOf(searchQuery) !== -1 ||
+            item.type.toLowerCase().indexOf(searchQuery) !== -1 ||
+            item.owner.toLowerCase().indexOf(searchQuery) !== -1 ||
+            (item.tags && item.tags.map((tag) => tag.toLowerCase()).indexOf(searchQuery) !== -1) ||
+            (item.description && item.description.indexOf(searchQuery) !== -1)
+        ));
 
         this.state = {
             ...this.state,

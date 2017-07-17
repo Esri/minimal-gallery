@@ -85,15 +85,15 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
         Main.prototype.handleBoilerplateProgress = function (progress) {
             this.state = __assign({}, this.state, { loadMessage: progress.status });
         };
+        __decorate([
+            decorators_1.property(),
+            widget_1.renderable()
+        ], Main.prototype, "state", void 0);
+        Main = __decorate([
+            decorators_1.subclass("esri.widgets.Main")
+        ], Main);
         return Main;
     }(decorators_1.declared(Widget)));
-    __decorate([
-        decorators_1.property(),
-        widget_1.renderable()
-    ], Main.prototype, "state", void 0);
-    Main = __decorate([
-        decorators_1.subclass("esri.widgets.Main")
-    ], Main);
     exports.default = Main;
 });
 //# sourceMappingURL=Main.js.map

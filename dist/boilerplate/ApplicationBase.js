@@ -524,11 +524,11 @@ define(["require", "exports", "dojo/_base/kernel", "esri/config", "esri/core/pro
             var tagsRE = /<\/?[^>]+>/g;
             return value.replace(tagsRE, "");
         };
+        ApplicationBase = __decorate([
+            declareDecorator_1.default()
+        ], ApplicationBase);
         return ApplicationBase;
     }());
-    ApplicationBase = __decorate([
-        declareDecorator_1.default()
-    ], ApplicationBase);
     exports.default = ApplicationBase;
 });
 //# sourceMappingURL=ApplicationBase.js.map

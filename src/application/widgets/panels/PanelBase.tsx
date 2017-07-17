@@ -12,6 +12,7 @@ interface IPanelProps {
     extTitle: string;
     extLink: string;
     extItem: string;
+    portalUrl: string;
 }
 
 export default (props: IPanelProps) => {
