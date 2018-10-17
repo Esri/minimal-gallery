@@ -1,6 +1,6 @@
 # Embedded Group Gallery Application
 
-This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](https://developers.arcgis.com/javascript/) and the Esri [Application-Base](https://github.com/Esri/application-base-js)
+This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.8](https://developers.arcgis.com/javascript/) and the Esri [Application-Base](https://github.com/Esri/application-base-js)
 
 ## Configuration
 
