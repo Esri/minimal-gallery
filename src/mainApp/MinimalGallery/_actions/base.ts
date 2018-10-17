@@ -65,7 +65,7 @@ const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applic
                     {
                         num: 100,
                         sortField: (config.sortField ? config.sortField : "numviews"),
-                        sortOrder: (config.sortOtder ? config.sortOrder : "desc"),
+                        sortOrder: (config.sortOrder ? config.sortOrder : "desc"),
                         start:  100 + (i * 100)
                     } as __esri.PortalQueryParams
                 )
