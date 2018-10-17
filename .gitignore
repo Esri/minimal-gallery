@@ -1,7 +1,4 @@
 node_modules
 .nyc_output
 coverage
-dist/application
-dist/boilerplate
-dist/viewApp
 package-lock.json
