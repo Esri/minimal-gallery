@@ -6,11 +6,15 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 
 `dist/config/application.json` contains settings that may be altered to change the appearance and behavior of the application. The configurable options included with this application (in addition to the existing boilerplate options) are as follows:
 
+- `"customCSS"`: String containing CSS that should be injected into the application at runtime.
+- `"openDocumentLinksDirectly"`: Boolean value controlling how "Document Link" items are opened. If true, a "Document Link" will open its underlying link when clicking on the thumbnail or title rather than the ArcGIS Online item page.
+- `"itemTypes"`: Comma-delimited list of sharing [API item types](https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm) to allow in the gallery (e.g. "Web Map, Web Mapping Application")
 - `"bgColor"`: The background color of the gallery
 - `"cardColor"`: The background color of the cards shown in the gallery for each item
 - `"appCaptionColor"`: The color of the card caption for the 'Web Mapping Application' item type
 - `"mapCaptionColor"`: The color of the card caption for the 'Web Map' item type
 - `"sceneCaptionColor"`: The color of the card caption for the 'Web Scene' item type
+- `"fileCaptionColor"`: The color of the card caption for any item type qualifying as a 'file'
 - `"captionFontColor"`: The color of the text displaying the item type in the card caption
 - `"fontColor"`: The color of fonts on the page
 - `"headColor"`: The background color for the page header
@@ -22,6 +26,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"sortField"`: The field by which items will be sorted in the gallery
 - `"showHeader"`: A boolean (true/false) value controlling whether or not the header will be displayed
 - `"showItemType"`: A boolean (true/false) value controlling whether or not item types will be displayed for each gallery item
+- `"itemTypeBelowThumbnail"`: Boolean value controlling where the item type will be displayed. If this is set to false, the item type will be displayed over the thumbnail and fade out on mouse-over. If set to true, the item type is displayed below the thumbnail.
 - `"headerText"`: The gallery title shown in the header
 - `"headerTextColor"`: The color of the header text
 - `"headerTextURL"`: A location for the gallery title to link to
@@ -33,6 +38,16 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"agolLinkText"`: The text displayed for the link to ArcGIS Online (or custom URL)
 - `"agolLinkLocation"`: The URL for the link displayed next to the gallery title. *`${GROUP_ID}` will be replaced dynamically with the ID of the group whose items are being displayed in the gallery*
 - `"itemsPerPage"`: The number of items to display per gallery page
+- `"showItemTitle"`: Boolean value controlling whether or not the item title will be displayed in each card
+- `"showItemSummary"`: Boolean value controlling whether or not the item summaries will be displayed in each card
+- `"showItemPageLink"`: Boolean value controlling whether or not the item page link will be displayed
+- `"openFullscreenSeparateTab"`: If true, opening maps, apps and scenes from the gallery fullscreen will always create a new tab
+- `"openItemDetailsSeparateTab"`: If true, opening an item's details will default to a new tab
+- `"showSignInBtn"`: If true, will show a sign in button in the top right of the gallery
+- `"alwaysOpenFullscreen"`: If true, maps, apps and scenes will always be opened fullscreen instead of in the gallery
+- `"summaryTruncLength"`: Specifies the number of characters to allow an item summary in the gallery card to extend before truncating it with an ellipsis
+- `"showSummaryTooltip"`: Boolean value controlling whether or not the 'Open ArcGIS Online Item Page' icon in the bottom right of the card will have a tooltip showing the summary for the item.
+- `"tooltipTruncLength"`: Specifies the number of characters to allow an item summary in the 'Open in ArcGIS Online' tooltip to extend before truncating it with an ellipsis
 - `"compassWidget"`: Controls the rendering of a [Compass](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Compass.html) widget on gallery-embedded or fullscreen maps and scenes
 - `"homeWidget"`: Controls the rendering of a [Home](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Home.html) widget on gallery-embedded or fullscreen maps and scenes
 - `"legendWidget"`: Controls the rendering of a [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget on gallery-embedded or fullscreen maps and scenes

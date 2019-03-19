@@ -1,11 +1,11 @@
 {
   "name": "arcgis-boilerplate-ts",
   "version": "0.0.1",
-  "description": "TypeScript boilerplate for building ArcGIS JS API 4.x Applications",
+  "description": "Minimal Gallery ArcGIS Online Template Application",
   "main": "entrypoint.js",
   "scripts": {
-    "start": "npm run watch",
-    "watch": "tsc --project ./src/tsconfig.json --watch",
+    "build": "webpack -p",
+    "watch": "webpack --watch --progress --colors",
     "test": "nyc mocha"
   },
   "nyc": {
@@ -21,23 +21,27 @@
   "keywords": [
     "Esri",
     "ArcGIS",
-    "TypeScript",
-    "Gallery"
+    "TypeScript"
   ],
   "devDependencies": {
-    "@types/arcgis-js-api": "^4.3.1",
+    "@types/arcgis-js-api": "^4.4.0",
     "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.13",
+    "awesome-typescript-loader": "^3.2.3",
     "chai": "^3.5.0",
     "dojo-typings": "^1.11.6",
     "maquette": "^2.4.5",
     "maquette-query": "^0.11.2",
-    "mocha": "^3.2.0",
+    "mocha": "^5.1.1",
     "mock-require": "^2.0.2",
-    "nyc": "^10.2.0",
+    "nyc": "^11.7.3",
     "sinon": "^2.1.0",
+    "source-map-loader": "^0.2.2",
     "ts-node": "^3.0.2",
-    "typescript": "^2.2.1"
+    "tslint": "^5.7.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.2.1",
+    "webpack": "^3.6.0"
   },
   "dependencies": {}
 }
