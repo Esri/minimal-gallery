@@ -47,10 +47,10 @@
   "locateWidget": "top-left",
   "searchWidget": "top-right",
   "appid": "",
-  "group": "a09a1595fd944f17a47a244e67d804f9",
+  "group": ["930b571efa4344369192c94ba43d02c7", "0aa8b02a5e95495ea58a5c2c51bd3dc1", "8973ad901ba741a898ef09c6aa528b3b"],
   "title": "",
-  "portalUrl": "https://www.arcgis.com",
-  "oauthappid": "arcgisWebApps",
+  "portalUrl": "https://team.maps.arcgis.com",
+  "oauthappid": "",
   "proxyUrl": "",
   "units": "",
   "helperServices": {

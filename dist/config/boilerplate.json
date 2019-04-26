@@ -9,7 +9,8 @@
   "group": {
     "default": "",
     "fetchInfo": true,
-    "fetchItems": true,
+    "fetchItems": false,
+    "fetchMultiple": true,
     "itemParams": {
       "sortField": "modified",
       "sortOrder": "desc",
