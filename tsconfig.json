@@ -16,7 +16,7 @@
   },
   "include": [
     "./src/**/*",
-    "../index.d.ts"
+    "./index.d.ts"
   ],
   "files": [
     "./node_modules/dojo-typings/dojo/1.11/loader.d.ts",
