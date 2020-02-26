@@ -68,11 +68,11 @@ export const queryGroupItems = (applicationBaseResult: __esriApplicationBase.App
         );
     };
 
-const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applicationBase"], config: any) => {
+const fetchAllGroupItemsById = (applicationBase: MinimalGalleryState["base"]["applicationBase"], config: any, groupId: string) => {
     const dfd = new Deferred;
 
     applicationBase.queryGroupItems(
-        config.group,
+        groupId,
         {
             num: 100,
             sortField: (config.sortField ? config.sortField : "numviews"),
@@ -84,7 +84,7 @@ const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applic
             const mappableArr = Array.apply(null, { length: Math.floor(response.total / 100) });
             const promises = mappableArr.map((c: any, i: number) => (
                 applicationBase.queryGroupItems(
-                    config.group,
+                    groupId,
                     {
                         num: 100,
                         sortField: (config.sortField ? config.sortField : "numviews"),
@@ -99,13 +99,37 @@ const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applic
                     return p;
                 }, { results: response.results });
                 dfd.resolve(allItems);
-            }, (err: Error) => {
+            },                 (err: Error) => {
                 dfd.reject(err);
             });
         } else {
             dfd.resolve(response);
         }
-    }, (err: Error) => {
+    },     (err: Error) => {
+        dfd.reject(err);
+    });
+
+    return dfd;
+};
+
+const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applicationBase"], config: any) => {
+    const dfd = new Deferred;
+
+    if ( !Array.isArray(config.group)) {
+        /* group is string */
+        return fetchAllGroupItemsById(applicationBase, config, config.group);
+    } 
+    /* group is array */
+    const promises = config.group.map((group: string) => (
+        fetchAllGroupItemsById(applicationBase, config, group)
+    ));
+    all(promises).then((responses: any) => {
+        const allItems = responses.reduce((p: any, c: any) => {
+            p.results = p.results.concat(c.results);
+            return p;
+        });
+        dfd.resolve(allItems);
+    },                 (err: Error) => {
         dfd.reject(err);
     });
 
